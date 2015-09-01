@@ -1,0 +1,8 @@
+li a {
+    color: green;
+}
+
+body {
+    /*I like more without the bottom*/
+    background: white url("images/background.gif") no-repeat  /* right bottom*/;
+}
