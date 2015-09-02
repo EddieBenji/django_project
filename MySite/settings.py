@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',  # we added the new app. Then, we'll run this command: python manage.py makemigrations polls
+    'bookstores',
 )
 
 MIDDLEWARE_CLASSES = (
