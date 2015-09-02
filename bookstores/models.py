@@ -17,7 +17,7 @@ class Publisher(models.Model):
     num_awards = models.IntegerField()
 
     def __str__(self):
-        return "Editorial: " + self.name + "\n Número de premios: " + str(self.num_awards)
+        return "Editorial: " + self.name + "\n Número de premios: " + str(self.num_awards) + "\n"
 
 
 class Book(models.Model):
@@ -32,12 +32,13 @@ class Book(models.Model):
     pubdate = models.DateField()
 
     def __str__(self):
-        return "Nombre libro: " + self.name + " \n  " + "Editoriales: " + str(
-            self.publisher) + "Autores: "  # + self.authors.all()
+        return "Nombre libro: " + self.name + " \n" + str(self.publisher) + self.my_authors()
 
     def my_authors(self):
+        str_authors = ""
         for author in self.authors.all():
-            print(author)
+            str_authors += str(author) + "\n"
+        return str_authors
 
 
 class Store(models.Model):
